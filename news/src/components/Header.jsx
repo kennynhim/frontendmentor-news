@@ -13,12 +13,27 @@ export default function Header() {
             >
                 W.
             </Grid>
-            <Grid item xs={4} sx={{ alignContent: "center", textAlign: "end" }}>
-                <span>Home</span>
-                <span>New</span>
-                <span>Popular</span>
-                <span>Trending</span>
-                <span>Categories</span>
+            <Grid
+                item
+                xs={4}
+                sx={{
+                    alignContent: "center",
+                    textAlign: "end",
+                }}
+            >
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        fontFamily: "Inter",
+                    }}
+                >
+                    <span>Home</span>
+                    <span>New</span>
+                    <span>Popular</span>
+                    <span>Trending</span>
+                    <span>Categories</span>
+                </div>
             </Grid>
         </Grid>
     );
