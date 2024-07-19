@@ -1,13 +1,14 @@
-import { Grid, Button } from "@mui/material";
+import { Grid, Button, useMediaQuery } from "@mui/material";
 import mainImg from "../../assets/image-web-3-desktop.jpg";
 
 export default function MainArticle() {
+    const isMobile = useMediaQuery("(max-width:900px)");
     return (
         <Grid container>
             <Grid item xs={12} style={{ marginBottom: "40px" }}>
                 <img style={{ maxWidth: "100%" }} src={mainImg} />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
                 <div
                     style={{
                         fontFamily: "Inter",
@@ -19,7 +20,12 @@ export default function MainArticle() {
                     The Bright Future of Web 3.0?
                 </div>
             </Grid>
-            <Grid item xs={6} sx={{ position: "relative" }}>
+            <Grid
+                item
+                xs={12}
+                md={6}
+                sx={{ position: isMobile ? "static" : "relative" }}
+            >
                 <div
                     style={{
                         fontFamily: "Inter",
@@ -39,8 +45,8 @@ export default function MainArticle() {
                         color: "black",
                         fontFamily: "Inter",
                         fontWeight: "700",
-                        width: "50%",
-                        position: "absolute",
+                        width: isMobile ? "auto" : "50%",
+                        position: isMobile ? "static" : "absolute",
                         bottom: 0,
                     }}
                 >
