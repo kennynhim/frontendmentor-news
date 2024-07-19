@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemText, Divider } from "@mui/material";
+import { List, ListItem, ListItemText, Grid } from "@mui/material";
 
 const articles = [
     {
@@ -25,17 +25,61 @@ export default function NewArticles() {
         <div
             style={{
                 fontFamily: "Inter",
-                fontWeight: "700",
-                fontSize: "45px",
-
                 backgroundColor: "hsl(240, 100%, 5%)",
                 height: "100%",
+                padding: "0 20px",
             }}
         >
-            <div style={{ color: "hsl(35, 77%, 62%)", paddingLeft: "20px" }}>
+            <div
+                style={{
+                    fontWeight: 700,
+                    fontSize: "45px",
+                    color: "hsl(35, 77%, 62%)",
+                    paddingTop: "20px",
+                }}
+            >
                 New
             </div>
-            <List sx={{ padding: "20px" }}>
+            <Grid
+                container
+                direction="column"
+                justifyContent="space-evenly"
+                sx={{ height: "100%" }}
+            >
+                {articles.map((article, idx) => (
+                    <Grid
+                        item
+                        key={article.id}
+                        sx={{
+                            fontFamily: "Inter",
+                            borderBottom:
+                                idx < articles.length - 1
+                                    ? "1px solid hsl(233, 8%, 79%)"
+                                    : "",
+                        }}
+                    >
+                        <div
+                            style={{
+                                color: "white",
+                                fontWeight: 700,
+                                fontSize: "28px",
+                                paddingBottom: "10px",
+                            }}
+                        >
+                            {article.title}
+                        </div>
+                        <div
+                            style={{
+                                color: "hsl(233, 8%, 79%)",
+                                paddingBottom: "50px",
+                            }}
+                        >
+                            {article.snippet}
+                        </div>
+                    </Grid>
+                ))}
+            </Grid>
+            {/* <List sx={{ padding: "20px" }}>
                 {articles.map((article, idx) => (
                     <ListItem
                         key={article.id}
@@ -59,7 +103,7 @@ export default function NewArticles() {
                         />
                     </ListItem>
                 ))}
-            </List>
+            </List> */}
         </div>
     );
 }
