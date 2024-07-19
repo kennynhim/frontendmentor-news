@@ -64,6 +64,7 @@ export default function Footer() {
                                     style={{
                                         color: "hsl(240, 100%, 5%)",
                                         fontWeight: 800,
+                                        fontSize: "22px",
                                     }}
                                 >
                                     {article.title}

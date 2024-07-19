@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 function App() {
     return (
-        <Grid container rowSpacing={8} sx={{ padding: "0 150px" }}>
+        <Grid container rowSpacing={8} sx={{ padding: "150px" }}>
             <Grid item xs={12}>
                 <Header />
             </Grid>

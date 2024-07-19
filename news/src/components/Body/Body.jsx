@@ -4,7 +4,7 @@ import NewArticles from "./NewArticles";
 
 export default function Body() {
     return (
-        <Grid container spacing={3}>
+        <Grid container>
             <Grid item xs={12} md={8}>
                 <MainArticle />
             </Grid>

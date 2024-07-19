@@ -4,7 +4,7 @@ import mainImg from "../../assets/image-web-3-desktop.jpg";
 export default function MainArticle() {
     const isMobile = useMediaQuery("(max-width:900px)");
     return (
-        <Grid container>
+        <Grid container sx={{ paddingRight: "30px" }}>
             <Grid item xs={12} style={{ marginBottom: "40px" }}>
                 <img style={{ maxWidth: "100%" }} src={mainImg} />
             </Grid>
