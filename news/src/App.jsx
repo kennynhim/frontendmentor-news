@@ -6,10 +6,16 @@ import "@fontsource/roboto/700.css";
 import Header from "./components/Header";
 import Body from "./components/Body/Body";
 import Footer from "./components/Footer";
+import { useIsMobile } from "./customHooks";
 
 function App() {
+    const isMobile = useIsMobile();
     return (
-        <Grid container rowSpacing={8} sx={{ padding: "150px" }}>
+        <Grid
+            container
+            rowSpacing={8}
+            sx={{ padding: isMobile ? "10px" : "150px" }}
+        >
             <Grid item xs={12}>
                 <Header />
             </Grid>

@@ -1,10 +1,11 @@
-import { Grid, Button, useMediaQuery } from "@mui/material";
+import { Grid, Button } from "@mui/material";
 import mainImg from "../../assets/image-web-3-desktop.jpg";
+import { useIsMobile } from "../../customHooks";
 
 export default function MainArticle() {
-    const isMobile = useMediaQuery("(max-width:900px)");
+    const isMobile = useIsMobile();
     return (
-        <Grid container sx={{ paddingRight: "30px" }}>
+        <Grid container sx={{ paddingRight: isMobile ? "0" : "30px" }}>
             <Grid item xs={12} style={{ marginBottom: "40px" }}>
                 <img style={{ maxWidth: "100%" }} src={mainImg} />
             </Grid>
@@ -14,7 +15,8 @@ export default function MainArticle() {
                         fontFamily: "Inter",
                         fontWeight: "800",
                         fontSize: "50px",
-                        width: "60%",
+                        width: isMobile ? "100%" : "60%",
+                        paddingBottom: isMobile ? "10px" : "0",
                     }}
                 >
                     The Bright Future of Web 3.0?
@@ -24,7 +26,10 @@ export default function MainArticle() {
                 item
                 xs={12}
                 md={6}
-                sx={{ position: isMobile ? "static" : "relative" }}
+                sx={{
+                    position: isMobile ? "static" : "relative",
+                    marginBottom: isMobile ? "50px" : "0",
+                }}
             >
                 <div
                     style={{
@@ -32,6 +37,7 @@ export default function MainArticle() {
                         fontSize: "15px",
                         lineHeight: "25px",
                         wordSpacing: "3px",
+                        paddingBottom: isMobile ? "10px" : "0",
                     }}
                 >
                     We dive into the next evolution of the web that claims to

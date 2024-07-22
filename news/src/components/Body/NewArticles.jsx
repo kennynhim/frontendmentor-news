@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemText, Grid } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 
 const articles = [
     {
@@ -21,6 +21,7 @@ const articles = [
 ];
 
 export default function NewArticles() {
+    const isXL = useMediaQuery("(min-width:1536px)");
     return (
         <div
             style={{
@@ -44,7 +45,7 @@ export default function NewArticles() {
                 container
                 direction="column"
                 justifyContent="space-evenly"
-                sx={{ height: "100%" }}
+                sx={{ height: isXL ? "100%" : "auto" }}
             >
                 {articles.map((article, idx) => (
                     <Grid
@@ -79,31 +80,6 @@ export default function NewArticles() {
                     </Grid>
                 ))}
             </Grid>
-            {/* <List sx={{ padding: "20px" }}>
-                {articles.map((article, idx) => (
-                    <ListItem
-                        key={article.id}
-                        divider={idx < articles.length - 1}
-                        sx={{ borderColor: "hsl(233, 8%, 79%)" }}
-                    >
-                        <ListItemText
-                            primary={article.title}
-                            secondary={article.snippet}
-                            primaryTypographyProps={{
-                                color: "white",
-                                fontFamily: "inter",
-                                fontWeight: 700,
-                                paddingBottom: "10px",
-                                paddingTop: "20px",
-                            }}
-                            secondaryTypographyProps={{
-                                color: "hsl(233, 8%, 79%)",
-                                paddingBottom: "20px",
-                            }}
-                        />
-                    </ListItem>
-                ))}
-            </List> */}
         </div>
     );
 }

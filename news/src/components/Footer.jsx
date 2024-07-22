@@ -36,7 +36,7 @@ export default function Footer() {
                         <Grid item xs="auto">
                             <img
                                 src={article.img}
-                                style={{ height: "150px" }}
+                                style={{ height: "120px" }}
                             />
                         </Grid>
                         <Grid item xs>
