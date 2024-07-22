@@ -1,0 +1,11 @@
+.readMoreButton {
+    background-color: hsl(5, 85%, 63%);
+    color: black;
+    font-family: "Inter";
+    font-weight: 700;
+    bottom: 0;
+}
+.readMoreButton:hover {
+    background-color: hsl(240, 100%, 5%);
+    color: white;
+}

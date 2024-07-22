@@ -1,0 +1,10 @@
+.newArticleTitle {
+    color: white;
+    font-weight: 700;
+    font-size: 28px;
+    padding-bottom: 10px;
+    font-family: "Inter";
+}
+.newArticleTitle:hover {
+    color: hsl(35, 77%, 62%);
+}

@@ -1,0 +1,9 @@
+.title {
+    color: hsl(240, 100%, 5%);
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.title:hover {
+    color: hsl(5, 85%, 63%);
+}

@@ -3,6 +3,7 @@ import { Grid } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useIsMobile } from "../customHooks";
 import MenuDrawer from "./MenuDrawer";
+import styles from "./Header.module.css";
 
 export default function Header() {
     const isMobile = useIsMobile();
@@ -43,11 +44,11 @@ export default function Header() {
                                 fontFamily: "Inter",
                             }}
                         >
-                            <span>Home</span>
-                            <span>New</span>
-                            <span>Popular</span>
-                            <span>Trending</span>
-                            <span>Categories</span>
+                            <span className={styles.menuLink}>Home</span>
+                            <span className={styles.menuLink}>New</span>
+                            <span className={styles.menuLink}>Popular</span>
+                            <span className={styles.menuLink}>Trending</span>
+                            <span className={styles.menuLink}>Categories</span>
                         </div>
                     )}
                 </Grid>

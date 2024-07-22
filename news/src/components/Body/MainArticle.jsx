@@ -1,9 +1,11 @@
-import { Grid, Button } from "@mui/material";
+import { Grid, Button, useMediaQuery } from "@mui/material";
 import mainImg from "../../assets/image-web-3-desktop.jpg";
 import { useIsMobile } from "../../customHooks";
+import styles from "./MainArticle.module.css";
 
 export default function MainArticle() {
     const isMobile = useIsMobile();
+    const isXL = useMediaQuery("(min-width:1563px)");
     return (
         <Grid container sx={{ paddingRight: isMobile ? "0" : "30px" }}>
             <Grid item xs={12} style={{ marginBottom: "40px" }}>
@@ -15,7 +17,7 @@ export default function MainArticle() {
                         fontFamily: "Inter",
                         fontWeight: "800",
                         fontSize: "50px",
-                        width: isMobile ? "100%" : "60%",
+                        width: isXL ? "60%" : "100%",
                         paddingBottom: isMobile ? "10px" : "0",
                     }}
                 >
@@ -46,14 +48,10 @@ export default function MainArticle() {
                 </div>
                 <Button
                     variant="contained"
+                    className={styles.readMoreButton}
                     sx={{
-                        backgroundColor: "hsl(5, 85%, 63%)",
-                        color: "black",
-                        fontFamily: "Inter",
-                        fontWeight: "700",
                         width: isMobile ? "auto" : "50%",
                         position: isMobile ? "static" : "absolute",
-                        bottom: 0,
                     }}
                 >
                     Read More

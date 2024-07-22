@@ -2,6 +2,8 @@ import { Grid } from "@mui/material";
 import gamingGrowth from "../assets/image-gaming-growth.jpg";
 import retroPcs from "../assets/image-retro-pcs.jpg";
 import topLaptops from "../assets/image-top-laptops.jpg";
+import { useIsMobile } from "../customHooks";
+import styles from "./Footer.module.css";
 
 const ARTICLES = [
     {
@@ -28,10 +30,23 @@ const ARTICLES = [
 ];
 
 export default function Footer() {
+    const isMobile = useIsMobile();
     return (
         <Grid container>
-            {ARTICLES.map((article) => (
-                <Grid item key={article.id} xs={4}>
+            {ARTICLES.map((article, index) => (
+                <Grid
+                    item
+                    key={article.id}
+                    xs={12}
+                    md={4}
+                    sx={{
+                        marginBottom: isMobile
+                            ? index < ARTICLES.length - 1
+                                ? "20px"
+                                : "0"
+                            : "0",
+                    }}
+                >
                     <Grid container spacing={3}>
                         <Grid item xs="auto">
                             <img
@@ -59,14 +74,7 @@ export default function Footer() {
                                 >
                                     {article.label}
                                 </Grid>
-                                <Grid
-                                    item
-                                    style={{
-                                        color: "hsl(240, 100%, 5%)",
-                                        fontWeight: 800,
-                                        fontSize: "22px",
-                                    }}
-                                >
+                                <Grid item className={styles.title}>
                                     {article.title}
                                 </Grid>
                                 <Grid

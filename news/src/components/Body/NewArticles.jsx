@@ -1,4 +1,5 @@
 import { Grid, useMediaQuery } from "@mui/material";
+import styles from "./NewArticles.module.css";
 
 const articles = [
     {
@@ -59,14 +60,7 @@ export default function NewArticles() {
                                     : "",
                         }}
                     >
-                        <div
-                            style={{
-                                color: "white",
-                                fontWeight: 700,
-                                fontSize: "28px",
-                                paddingBottom: "10px",
-                            }}
-                        >
+                        <div className={styles.newArticleTitle}>
                             {article.title}
                         </div>
                         <div
